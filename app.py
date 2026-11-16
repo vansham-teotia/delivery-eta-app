@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 
 # --- PAGE CONFIG & PREMIUM CSS ---
 st.set_page_config(page_title="Logistics ETA Predictor", layout="wide", page_icon="⏱️")
@@ -29,13 +29,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- LOAD ARTIFACTS ---
+# --- LOAD ARTIFACTS ---
 @st.cache_resource
 def load_artifacts():
-    with open('models/xgb_best.pkl', 'rb') as f:
-        model = pickle.load(f)
-    with open('models/standard_scaler.pkl', 'rb') as f:
-        scaler = pickle.load(f)
+    model = joblib.load('models/xgb_best.pkl')
+    scaler = joblib.load('models/standard_scaler.pkl')
     return model, scaler
+
+model, scaler = load_artifacts()
 
 model, scaler = load_artifacts()
 
