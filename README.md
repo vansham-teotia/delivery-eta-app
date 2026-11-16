@@ -46,7 +46,7 @@ If you wish to run this project on your local machine, follow these steps:
 git clone [https://github.com/vansham-teotia/delivery-eta-app.git](https://github.com/vansham-teotia/delivery-eta-app.git)
 cd delivery-eta-app
 
-**2. Create and activate a virtual environment**
+2. Create and activate a virtual environment
 
 # Windows
 python -m venv venv
@@ -56,10 +56,10 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 
-**3. Install the dependencies**
+3. Install the dependencies
 pip install -r requirements.txt
 
-**4. Run the Streamlit server**
+4. Run the Streamlit server
 streamlit run app.py
 
 📂 Project Structure
